@@ -1,0 +1,13 @@
+allow fsck e2fsck_oem_block_device:blk_file rw_file_perms;
+allow fsck e2fsck_cache_block_device:blk_file rw_file_perms;
+allow fsck e2fsck_frp_block_device:blk_file rw_file_perms;
+
+allow fsck media_rw_data_file:dir getattr;
+
+allowxperm fsck vold_device:blk_file ioctl {
+  BLKSECDISCARD BLKDISCARD BLKPBSZGET BLKDISCARDZEROES BLKROGET
+};
+
+allowxperm fsck_untrusted vold_device:blk_file ioctl {
+  BLKDISCARD BLKGETSIZE BLKROGET
+};

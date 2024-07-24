@@ -1,0 +1,1 @@
+allow rild usb_serial_device:chr_file rw_file_perms;
